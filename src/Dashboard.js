@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Chip from "@material-ui/core/Chip";
@@ -9,34 +8,11 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 
+import "./App.css";
+
 import { CTX } from "./Store";
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    margin: "50px",
-    padding: theme.spacing(3, 2)
-  },
-  flex: {
-    display: "flex",
-    alignItems: "center"
-  },
-  topicsWindow: {
-    width: "30%",
-    height: "300px",
-    borderRight: "1px solid grey"
-  },
-  chatsWindow: {
-    width: "70%",
-    height: "300px",
-    padding: "20px"
-  },
-  chatBox: {
-    width: "85%"
-  },
-  button: {
-    width: "15%"
-  }
-}));
+import { useStyles } from "./Styles";
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -50,10 +26,10 @@ export default function Dashboard() {
   const [textValue, changeTextValue] = React.useState("");
 
   return (
-    <div>
+    <div className="plank">
       <Paper className={classes.root}>
         <Typography variant="h3" component="h3">
-          Gumzo
+          LetsChat
         </Typography>
         <Typography variant="h6" component="h6">
           {activeTopic}
